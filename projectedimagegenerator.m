@@ -1,11 +1,10 @@
 %%
 
-%axis tight manual
 filename='testAnimated.gif';
 
 %%
-xsize=800;
-ysize=480;
+xsize=1440;
+ysize=1080;
 image=zeros(ysize,xsize);
 %%
 period=16.0;
