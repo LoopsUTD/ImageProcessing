@@ -1,14 +1,17 @@
 intensity=1;
-freq=0.21;
+freq=0.2;
 
-curve=imread('hilbert.png');
-curve=imbinarize(curve,0.5);
-edges=edge(curve,'Sobel',0);
+%curve=imread('basehilbert.png');
+curve=imread('basestripes.png');
+%curve=imbinarize(curve,0.5);
+%edges=edge(curve,'canny',0);
 base=curve;
 
-curve=deviate(freq,intensity,curve);
-curve=curve(1:500,:)-base;
-imshow(curve);
+deviated=deviate(freq,intensity,curve')';
+
+%curve=curve(1:500,:)-base;
+imshow(deviated);
+
 function[dev_curve]=deviate(frequency,intensity,curve)
 for x=1:495
  

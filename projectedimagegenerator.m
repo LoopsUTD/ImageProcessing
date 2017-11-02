@@ -3,14 +3,14 @@
 filename='testAnimated.gif';
 
 %%
-xsize=1440;
-ysize=1080;
+xsize=500;
+ysize=500;
 image=zeros(ysize,xsize);
 %%
 period=16.0;
-dutycycle=0.125;
+dutycycle=0.375;
 cutoff=period*(1-dutycycle);
-nImages=period;
+nImages=1;
 
 %%
    h= figure;
