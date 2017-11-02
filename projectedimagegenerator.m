@@ -35,12 +35,13 @@ frame=getframe(h);
 im{idx}=frame2im(frame);
 end
 
+imwrite(image,'basestripes.png');
 %%
-for idx = 1:nImages
-    [A,map] = rgb2ind(im{idx},256);
-    if idx == 1
-        imwrite(A,map,filename,'gif','LoopCount',Inf,'DelayTime',0.1);
-    else
-        imwrite(A,map,filename,'gif','WriteMode','append','DelayTime',0.1);
-    end
-end
+% for idx = 1:nImages
+%     [A,map] = rgb2ind(im{idx},256);
+%     if idx == 1
+%         imwrite(A,map,filename,'gif','LoopCount',Inf,'DelayTime',0.1);
+%     else
+%         imwrite(A,map,filename,'gif','WriteMode','append','DelayTime',0.1);
+%     end
+% end
