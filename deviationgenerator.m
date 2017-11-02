@@ -2,7 +2,7 @@ intensity=1;
 freq=0.2;
 
 %curve=imread('basehilbert.png');
-curve=imread('basestripes.png');
+curve=imread('stripes.png');
 %curve=imbinarize(curve,0.5);
 %edges=edge(curve,'canny',0);
 base=curve;

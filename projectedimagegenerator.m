@@ -35,7 +35,7 @@ frame=getframe(h);
 im{idx}=frame2im(frame);
 end
 
-imwrite(image,'basestripes.png');
+imwrite(image,'stripes.png');
 %%
 % for idx = 1:nImages
 %     [A,map] = rgb2ind(im{idx},256);
