@@ -1,4 +1,4 @@
-intensity=1;
+intensity=2;
 freq=0.2;
 
 %curve=imread('basehilbert.png');
@@ -11,9 +11,10 @@ deviated=deviate(freq,intensity,curve')';
 
 %curve=curve(1:500,:)-base;
 imshow(deviated);
+imwrite(deviated,'i1_freq0p2.png');
 
 function[dev_curve]=deviate(frequency,intensity,curve)
-for x=1:495
+for x=1:500
  
     if(rand<frequency)
        y=ceil(rand*500);
