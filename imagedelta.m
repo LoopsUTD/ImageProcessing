@@ -4,14 +4,16 @@ naive=[0,0,0;...
       0,1,0;...
       0,0,0];
   
-size=3;
+size=5;
 gauss=fspecial('gaussian',size,size/3);
 
 
 actual=imread('i1_freq0p2.png');
 expected=imread('stripes.png');
-out=abs(imfilter(actual,gauss)-imfilter(expected,naive));
-out2=abs(imfilter(actual,naive)-imfilter(expected,naive));
+blurred=imfilter(actual,gauss);
+
+out=(imfilter(actual,gauss)-imfilter(expected,naive));
+out2=(imfilter(actual,naive)-imfilter(expected,naive));
 %%
 close all
 imshow(out);

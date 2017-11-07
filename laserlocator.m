@@ -1,4 +1,4 @@
-laser=imread('lasers.png');
+laser=imread('faintlaser.png');
 [center,redness]=chromacenter(laser);
 %laser2=w2b(laser);
 imshow(laser);
@@ -7,13 +7,10 @@ plot(center(2),center(1),'g*');
  
 
 function[center,redness]=chromacenter(image)
-center=[0,0];
 x=0;
 y=0;
-RED=0;
 bounds=size(image);
-localred=zeros(bounds);
-localred=redlevel(image);
+localred=redlevel(image,64);
 RED=sum(localred(:));
 
 for i=1:bounds(1)
@@ -22,8 +19,8 @@ for i=1:bounds(1)
         y(i,j)=double(localred(i,j)).*j;
     end
 end
-num=[sum(x(:)),sum(y(:))]
-center=num./RED
+num=[sum(x(:)),sum(y(:))];
+center=num./RED;
 redness=localred;
 end
 
