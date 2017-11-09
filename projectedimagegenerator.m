@@ -1,27 +1,28 @@
 %%
 
-filename='testAnimated.gif';
+%filename='testAnimated.gif';
 
 %%
-xsize=500;
-ysize=500;
+xsize=1280;
+ysize=720;
 image=zeros(ysize,xsize);
 %%
 period=16.0;
-dutycycle=0.375;
+dutycycle=0.5;
 cutoff=period*(1-dutycycle);
 nImages=1;
-
+colorvect=[0,255,0];
 %%
    h= figure;
 
+   
 for idx=1:nImages
     image=zeros(ysize,xsize);
     k=idx-1;
-    for i=1:1:xsize  
+    for i=1:1:ysize  
      k=k+1;
          if k<=cutoff
-          image(:,i)=ones(ysize,1);
+          image(i,:,1:3)=ones(xsize,1).*colorvect;
          end
 
          if k==period
@@ -35,7 +36,10 @@ frame=getframe(h);
 im{idx}=frame2im(frame);
 end
 
-imwrite(image,'stripes.png');
+imwrite(image,'TestImages/16pxH.png');
+
+
+%%
 %%
 % for idx = 1:nImages
 %     [A,map] = rgb2ind(im{idx},256);
