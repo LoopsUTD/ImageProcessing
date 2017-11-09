@@ -1,42 +1,11 @@
-laser=imread('faintlaser.png');
-[center,redness]=chromacenter(laser);
-%laser2=w2b(laser);
+laser=imread('laser2.png'.png');
+color ='r';
+[center,redness]=chromacenter(laser,64,color);
 imshow(laser);
 hold on
 plot(center(2),center(1),'g*');
- 
-
-function[center,redness]=chromacenter(image)
-x=0;
-y=0;
-bounds=size(image);
-localred=redlevel(image,64);
-RED=sum(localred(:));
-
-for i=1:bounds(1)
-    for j=1:bounds(2)
-        x(i,j)=double(localred(i,j)).*i;
-        y(i,j)=double(localred(i,j)).*j;
-    end
-end
-num=[sum(x(:)),sum(y(:))];
-center=num./RED;
-redness=localred;
-end
+ hold off
+%find center of brightest spot
+%characterize shape change of spot
 
 
-% 
-% 
-% function[blackbackground]=w2b(image)
-% white=[255,255,255];
-% blackbackground=zeros(size(image));
-% for i=1:size(image,1)
-%     for j=1:size(image,2)
-%         for k=1:3  
-%          if(image(i,j,k)~=255)
-%              blackbackground(i,j,k)=image(i,j,k)
-%          end
-%         end
-%     end
-% end
-% end
