@@ -7,7 +7,7 @@ xsize=1280;
 ysize=720;
 image=zeros(ysize,xsize);
 %%
-period=8.0;
+period=2.0;
 dutycycle=0.5;
 cutoff=period*(1-dutycycle);
 nImages=1;
