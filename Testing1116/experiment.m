@@ -1,5 +1,7 @@
 clc;
 
+%%%% Make sure to have test images in this directory [Period]px[V or H].png
+
 screen=["lcd","kindle"];
 trial=[1,2];
 lens=[3,1,2];
