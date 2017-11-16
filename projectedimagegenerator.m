@@ -2,12 +2,14 @@
 
 %filename='testAnimated.gif';
 
+orientation="H";
+
 %%
 xsize=1280;
 ysize=720;
 image=zeros(ysize,xsize);
 %%
-period=2.0;
+period=6.0;
 dutycycle=0.5;
 cutoff=period*(1-dutycycle);
 nImages=1;
@@ -19,10 +21,10 @@ colorvect=[0,255,0];
 for idx=1:nImages
     image=zeros(ysize,xsize);
     k=idx-1;
-    for i=1:1:xsize  
+    for i=1:1:ysize  
      k=k+1;
          if k<=cutoff
-          image(:,i,1:3)=ones(ysize,1).*colorvect;
+          image(i,:,1:3)=ones(xsize,1).*colorvect;
          end
 
          if k==period
@@ -36,7 +38,7 @@ frame=getframe(h);
 im{idx}=frame2im(frame);
 end
 
-imwrite(image,'TestImages/8pxV.png');
+imwrite(image,'TestImages/6pxH.png');
 
 
 %%
