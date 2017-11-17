@@ -3,3 +3,4 @@
 *.gif
 *.tif
 !base*
+filenames.txt
