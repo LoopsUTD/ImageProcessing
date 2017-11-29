@@ -4,3 +4,4 @@
 *.tif
 ExperimentalData/*
 !base*
+filenames.txt
