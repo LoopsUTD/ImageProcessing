@@ -2,7 +2,7 @@
 
 %filename='testAnimated.gif';
 
-orientation="H";
+orientation='H';
 
 %%
 xsize=1280;
