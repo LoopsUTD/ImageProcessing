@@ -1,0 +1,7 @@
+What you see on the screen:
+RGBRGBRGBRGBRGBRGBRGBRGBRGB
+0   0   0   0   0   0   0
+
+What you see in the code:
+RGB RGB RGB RGB RGB RGB RGB RGB RGB
+0    0    0     0    0    0     0
