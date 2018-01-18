@@ -9,7 +9,7 @@ xsize=1280;
 ysize=720;
 image=zeros(ysize,xsize);
 %%
-period=6.0;                     % This is now how often a green pixel appears - 1 in [period]
+period=10.0;                     % This is now how often a green pixel appears - 1 in [period]
 % dutycycle=0.5;                % used for alternating bars
 % cutoff=period*(1-dutycycle);  % used for alternating bars
 cutoff=1.0;
@@ -48,7 +48,7 @@ frame=getframe(h);
 im{idx}=frame2im(frame);
 end
 
-imwrite(image,'TestImages/6pxH.png');
+imwrite(image,'TestImages/10px.png');
 
 
 %%
