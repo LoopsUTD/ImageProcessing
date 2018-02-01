@@ -9,9 +9,10 @@ xsize=1280;
 ysize=720;
 image=zeros(ysize,xsize);
 %%
-period=6.0;
-dutycycle=0.5;
-cutoff=period*(1-dutycycle);
+period=10.0;                     % This is now how often a green pixel appears - 1 in [period]
+% dutycycle=0.5;                % used for alternating bars
+% cutoff=period*(1-dutycycle);  % used for alternating bars
+cutoff=1.0;
 nImages=1;
 colorvect=[0,255,0];
 %%
@@ -24,13 +25,22 @@ for idx=1:nImages
     for i=1:1:ysize  
      k=k+1;
          if k<=cutoff
-          image(i,:,1:3)=ones(xsize,1).*colorvect;
+             m = 1;
+             for j=1:1:xsize
+                 m=m+1;
+                 if m<=cutoff
+                     image(i,j,1:3)=ones(1,1).*colorvect;
+                 end
+                 if m==period
+                     m=0;
+                 end
+             end
+          % image(i,:,1:3)=ones(xsize,1).*colorvect;  % from when this code
+          % only made horizontal lines
          end
-
          if k==period
              k=0;
          end
-
     end
 
 imshow(image)
@@ -38,7 +48,7 @@ frame=getframe(h);
 im{idx}=frame2im(frame);
 end
 
-imwrite(image,'TestImages/6pxH.png');
+imwrite(image,'TestImages/10px.png');
 
 
 %%
